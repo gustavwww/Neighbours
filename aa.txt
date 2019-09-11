@@ -1,4 +1,4 @@
-﻿Hello World - hello not world
+Hello World
 
 <<<<<<< HEAD
 Bye - dfiohsdofö hoho
@@ -6,5 +6,5 @@ Bye - dfiohsdofö hoho
 Bye - not bye
 >>>>>>> cf1df57920a931d3ea35199117342486ddc303e7
 
-Hello again
+Hello agai
 
