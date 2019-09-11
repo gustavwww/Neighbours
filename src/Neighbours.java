@@ -104,13 +104,12 @@ public class Neighbours extends Application {
 
             }
         }
-
     }
 
     double getSameNeighboursFor(Actor[][] world, int row, int index) {
 
-        int sameNeighbours = 0;
-        int notSameNeighbours = 0;
+        double sameNeighbours = 0;
+        double notSameNeighbours = 0;
 
         for (int rowMod = -1; rowMod <= 1; rowMod++) {
             for (int iMod = -1; iMod <= 1; iMod++) {
@@ -182,34 +181,40 @@ public class Neighbours extends Application {
         for (int row = 0; row < world.length; row++) {
             for (int i = 0; i < world[row].length; i++) {
 
-                while (true) {
-
-                    int nr = rand.nextInt(3);
-
-                    if (nr == 0 && nRedDist != 0) {
-
-                        world[row][i] = Actor.RED;
-                        nRedDist--;
-                        break;
-                    } else if (nr == 1 && nBlueDist != 0) {
-
-                        world[row][i] = Actor.BLUE;
-                        nBlueDist--;
-                        break;
-                    } else if (nr == 2 && nNoneDist != 0) {
-
-                        world[row][i] = Actor.NONE;
-                        nNoneDist--;
-                        break;
-                    }
-
-                }
+                randomizeLocation(world, nRedDist, nBlueDist, nNoneDist, row, i);
 
             }
 
         }
 
         return world;
+    }
+
+    void randomizeLocation(Actor[][] world, double nRedDist, double nBlueDist, double nNoneDist, int row, int index) {
+
+        while (true) {
+
+            int nr = rand.nextInt(3);
+
+            if (nr == 0 && nRedDist != 0) {
+
+                world[row][index] = Actor.RED;
+                nRedDist--;
+                break;
+            } else if (nr == 1 && nBlueDist != 0) {
+
+                world[row][index] = Actor.BLUE;
+                nBlueDist--;
+                break;
+            } else if (nr == 2 && nNoneDist != 0) {
+
+                world[row][index] = Actor.NONE;
+                nNoneDist--;
+                break;
+            }
+
+        }
+
     }
 
     // Check if inside world
