@@ -1,3 +1,8 @@
 Hello World
 
-Bye - dfiohsdofö
+<<<<<<< HEAD
+Bye - dfiohsdofö hoho
+=======
+Bye - not bye
+>>>>>>> cf1df57920a931d3ea35199117342486ddc303e7
+
